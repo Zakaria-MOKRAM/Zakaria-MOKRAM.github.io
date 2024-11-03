@@ -26,7 +26,7 @@ const technologies = [
         {
             technologies.map((tech) => (
                 <div class="tech-card">
-                    <Icon icon={tech.icon} size="3.5em" />
+                    <Icon icon={tech.icon as any} size="3.5em" />
                     <span>{tech.name}</span>
                 </div>
             ))
