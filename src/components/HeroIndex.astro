@@ -1,0 +1,115 @@
+---
+interface Props {
+	title: string;
+	tagline?: string;
+	align?: 'start' | 'center';
+	classTitle?: string;
+}
+
+const { align = 'center', tagline, title, classTitle = 'title' } = Astro.props;
+---	
+
+
+<div class:list={['hero stack gap-4', align]}>
+	<div class="stack gap-2">
+		<h1 class={classTitle}>
+			Hello there, <span id="animated-name"></span><span class="cursor">|</span>
+		</h1>
+		{tagline && <p class="tagline">{tagline}</p>}
+	</div>
+	<slot />
+</div>
+
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const animatedText = document.getElementById('animated-name');
+		const texts = ["I am Zakaria MOKRAM", "I'm a software engineer"];
+		let currentTextIndex = 0;
+		let index = 0;
+		let isDeleting = false;
+
+		function typeWriter() {
+			const text = texts[currentTextIndex];
+
+			if (!isDeleting && index < text.length) {
+				// Typing forward
+				animatedText.innerHTML = text.slice(0, ++index);
+				setTimeout(typeWriter, 100);
+			} else if (isDeleting && index > 0) {
+				// Deleting backward
+				animatedText.innerHTML = text.slice(0, --index);
+				setTimeout(typeWriter, 50);
+			} else if (!isDeleting && index === text.length) {
+				// Pause before deleting
+				setTimeout(() => {
+					isDeleting = true;
+					typeWriter();
+				}, 2000);
+			} else if (isDeleting && index === 0) {
+				// Switch to the next text and pause before retyping
+				isDeleting = false;
+				currentTextIndex = (currentTextIndex + 1) % texts.length; // Toggle between texts
+				setTimeout(typeWriter, 500);
+			}
+		}
+
+		typeWriter();
+	});
+</script>
+
+<style>
+	.hero {
+		font-size: var(--text-lg);
+		text-align: center;
+	}
+
+	.title,
+	.tagline {
+		max-width: 37ch;
+		margin-inline: auto;
+	}
+
+	.title {
+		font-size: var(--text-3xl);
+		color: var(--gray-0);
+	}
+
+	#animated-name {
+		font-size: var(--text-5xl);
+		color: var(--highlight-color, #7611a6); /* Customize highlight color if needed */
+		white-space: nowrap;
+	}
+
+	.cursor {
+		font-size: var(--text-5xl);
+		color: var(--gray-0);
+		animation: blink 0.7s steps(1) infinite;
+		margin-left: 2px; /* Adds spacing between text and cursor */
+	}
+
+	@keyframes blink {
+		50% {
+			opacity: 0;
+		}
+	}
+
+	@media (min-width: 50em) {
+		.hero {
+			font-size: var(--text-xl);
+		}
+
+		.start {
+			text-align: start;
+		}
+
+		.start .title,
+		.start .tagline {
+			margin-inline: unset;
+		}
+
+		.title {
+			font-size: var(--text-5xl);
+		}
+	}
+</style>

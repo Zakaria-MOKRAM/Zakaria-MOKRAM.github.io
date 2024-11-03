@@ -1,0 +1,71 @@
+---
+import Icon from "./Icon.astro";
+
+const technologies = [
+    { name: 'Laravel', icon: 'laravel' },
+    { name: 'Python', icon: 'python' },
+    { name: 'Django', icon: 'django' },
+    { name: 'MySQL', icon: 'mysql' },
+    { name: 'React.js', icon: 'react' },
+    { name: 'Angular', icon: 'angular' },
+    { name: 'Vue.js', icon: 'vue' },
+    { name: 'Tailwind.css', icon: 'tailwind' },
+    { name: 'Java', icon: 'java' },
+    { name: 'Node.js', icon: 'node' },
+    { name: 'Docker', icon: 'docker' },
+    { name: 'Spring', icon: 'spring' },
+    { name: 'Php', icon: 'php' },
+    { name: 'Linux', icon: 'linux' },
+    { name: 'DBA', icon: 'oracle' },
+    { name: 'Hadoop', icon: 'hadoop' }
+];
+---
+
+<div class="tech-stack">
+    <div class="tech-grid">
+        {
+            technologies.map((tech) => (
+                <div class="tech-card">
+                    <Icon icon={tech.icon} size="3.5em" />
+                    <span>{tech.name}</span>
+                </div>
+            ))
+        }
+    </div>
+</div>
+
+<style>
+    .tech-stack {
+        width: 50%;
+    }
+
+    .tech-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+
+    .tech-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1.5rem;
+        border: 1px solid var(--gray-800);
+        border-radius: 3.5rem;
+        background: var(--gradient-subtle);
+        box-shadow: var(--shadow-sm);
+        transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+    .tech-card:hover {
+        cursor: pointer;
+        transform: translateY(-4px); /* Augmenter la valeur ici */
+        box-shadow: 0 4px 10px rgba(251, 3, 3, 0.5); /* Ombre plus forte */
+    }
+    .tech-card span {
+        font-size: var(--text-sm);
+        color: var(--gray-300);
+        font-weight: bold;
+    }
+</style>

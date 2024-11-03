@@ -1,0 +1,164 @@
+---
+const experiences = [
+    {
+        year: '2023',
+        positions: [
+            {
+                title: 'Backend Developer',
+                company: 'Acaart',
+                description: 'Developed and maintained library management web interfaces for better user engagement.'
+            },
+            {
+                title: 'Web Developer',
+                company: 'AlFajr Library',
+                description: 'Developed and maintained library management web interfaces for better user engagement.'
+            }
+        ]
+    },
+    {
+        year: '2022',
+        positions: [
+            {
+                title: 'Web Developer',
+                company: 'NYB CONSULTING SARL',
+                description: 'Developed and maintained library management web interfaces for better user engagement.'
+            }
+        ]
+    },
+    {
+        year: '2021',
+        positions: [
+            {
+                title: 'Web Developer',
+                company: 'EST',
+                description: 'Developed and maintained library management web interfaces for better user engagement.'
+            }
+        ]
+    }
+];
+---
+
+<div class="experience">
+    {experiences.map((exp, yearIndex) => (
+        <div class="year-block" key={yearIndex}>
+            <div class="year">
+                <span>{exp.year}</span>
+            </div>
+            <div class="positions">
+                {exp.positions.map((position, posIndex) => (
+                    <div class="position" key={posIndex}>
+                        <h4>{position.title}</h4>
+                        <p>{position.company}</p>
+                        <a href="javascript:void(0);" onclick={`toggleDescription('desc-${yearIndex}-${posIndex}')`} class="read-more-link">
+                            Read More
+                        </a>
+                        <p id={`desc-${yearIndex}-${posIndex}`} class="description" style="display: none;">
+                            {position.description}
+                        </p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    ))}
+</div>
+
+<script is:inline>
+    function toggleDescription(id) {
+        const description = document.getElementById(id);
+        if (description.style.display === 'none' || !description.style.display) {
+            description.style.display = 'block';
+        } else {
+            description.style.display = 'none';
+        }
+    }
+</script>
+
+<style>
+    .read-more-link {
+        display: inline-block;
+        margin-top: 0.5rem;
+        color: var(--accent-regular);
+        font-size: var(--text-sm);
+        text-decoration: underline;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 0;
+    }
+
+    .read-more-link:hover {
+        color: var(--accent-light);
+    }
+    .description {
+        margin-top: 0.5rem;
+        color: var(--gray-200);
+    }
+    .experience {
+        width: 50%;
+        justify-content: right;
+        align-items: right;
+        flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(auto-fit);
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+
+    .year-block {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 2rem;
+        align-items: start;
+    }
+
+    .year {
+        color: var(--accent-regular);
+        font-family: var(--font-brand);
+        font-size: var(--text-xl);
+        font-weight: 600;
+        padding-top: 0.5rem;
+        min-width: 100px;
+    }
+
+    .positions {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        flex: 1;
+    }
+
+    .position {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1rem;
+        background: var(--gradient-subtle);
+        border: 1px solid var(--gray-800);
+        border-radius: 0.75rem;
+        box-shadow: var(--shadow-sm);
+    }
+
+    .position h4 {
+        font-size: var(--text-lg);
+        font-weight: 600;
+        color: var(--gray-100);
+        margin: 0;
+    }
+
+    .position p {
+        font-size: var(--text-md);
+        color: var(--gray-300);
+        margin: 0;
+    }
+
+    @media (max-width: 50em) {
+        .year-block {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .year {
+            padding-top: 0;
+        }
+    }
+</style>

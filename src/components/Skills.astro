@@ -1,0 +1,65 @@
+---
+import Icon from './Icon.astro';
+---
+
+<section class="box skills">
+	<div class="stack gap-2 lg:gap-4">
+		<Icon icon="code" color="var(--accent-regular)" size="2.5rem" gradient />
+		<h2>Web Developer</h2>
+		<p>Proficiency in front-end technologies (HTML, CSS, JavaScript, frameworks like React or Angular) and back-end technologies (Node.js, Python, Java)</p>
+		<p>Ability to design and develop complete web applications, from user interface to server logic.</p>
+	</div>
+	<div class="stack gap-2 lg:gap-4">
+		<Icon icon="database-icon" color="var(--accent-regular)" size="2.5rem" gradient />
+		<h2>Database Manager</h2>
+		<p>Expertise in designing, managing, and optimizing databases, including SQL (MySQL, PostgreSQL) and NoSQL (MongoDB, Cassandra).</p>
+		<p>Skills in writing efficient SQL queries and using database management tools.</p>
+	</div>
+	<div class="stack gap-2 lg:gap-4">
+		<Icon icon="docker-icon" color="var(--accent-regular)" size="2.5rem" gradient />
+		<h2>Deployment DevOps</h2>
+		<p>Knowledge of deployment tools and practices, such as Docker, Kubernetes, and cloud services (AWS, Azure)</p>
+		<p>Mastery of CI/CD pipelines to automate testing and deployments, ensuring continuous and reliable delivery of applications</p>
+	</div>
+</section>
+
+<style>
+	.box {
+		border: 1px solid var(--gray-800);
+		border-radius: 0.75rem;
+		padding: 1.5rem;
+		background-color: var(--gray-999_40);
+		box-shadow: var(--shadow-sm);
+	}
+
+	.skills {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+	}
+
+	.skills h2 {
+		font-size: var(--text-lg);
+	}
+
+	.skills p {
+		color: var(--gray-400);
+	}
+
+	@media (min-width: 50em) {
+		.box {
+			border-radius: 1.5rem;
+			padding: 2.5rem;
+		}
+
+		.skills {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 5rem;
+		}
+
+		.skills h2 {
+			font-size: var(--text-2xl);
+		}
+	}
+</style>
