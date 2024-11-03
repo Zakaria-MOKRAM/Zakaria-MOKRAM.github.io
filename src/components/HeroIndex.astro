@@ -32,32 +32,34 @@ const { align = 'center', tagline, title, classTitle = 'title' } = Astro.props;
 		function typeWriter() {
 			const text = texts[currentTextIndex];
 
-			if (!isDeleting && index < text.length) {
-				// Typing forward
-				animatedText.innerHTML = text.slice(0, ++index);
-				setTimeout(typeWriter, 100);
-			} else if (isDeleting && index > 0) {
-				// Deleting backward
-				animatedText.innerHTML = text.slice(0, --index);
-				setTimeout(typeWriter, 50);
-			} else if (!isDeleting && index === text.length) {
-				// Pause before deleting
-				setTimeout(() => {
-					isDeleting = true;
-					typeWriter();
-				}, 2000);
-			} else if (isDeleting && index === 0) {
-				// Switch to the next text and pause before retyping
-				isDeleting = false;
-				currentTextIndex = (currentTextIndex + 1) % texts.length; // Toggle between texts
-				setTimeout(typeWriter, 500);
+			// Vérifie si animatedText n'est pas null
+			if (animatedText) {
+				if (!isDeleting && index < text.length) {
+					// Typing forward
+					animatedText.innerHTML = text.slice(0, ++index);
+					setTimeout(typeWriter, 100);
+				} else if (isDeleting && index > 0) {
+					// Deleting backward
+					animatedText.innerHTML = text.slice(0, --index);
+					setTimeout(typeWriter, 50);
+				} else if (!isDeleting && index === text.length) {
+					// Pause before deleting
+					setTimeout(() => {
+						isDeleting = true;
+						typeWriter();
+					}, 2000);
+				} else if (isDeleting && index === 0) {
+					// Switch to the next text and pause before retyping
+					isDeleting = false;
+					currentTextIndex = (currentTextIndex + 1) % texts.length; // Toggle between texts
+					setTimeout(typeWriter, 500);
+				}
 			}
 		}
 
 		typeWriter();
 	});
 </script>
-
 <style>
 	.hero {
 		font-size: var(--text-lg);
