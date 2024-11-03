@@ -40,13 +40,13 @@ const experiences = [
 
 <div class="experience">
     {experiences.map((exp, yearIndex) => (
-        <div class="year-block" key={yearIndex}>
+        <div class="year-block" data-key={yearIndex}>
             <div class="year">
                 <span>{exp.year}</span>
             </div>
             <div class="positions">
                 {exp.positions.map((position, posIndex) => (
-                    <div class="position" key={posIndex}>
+                    <div class="position" data-key={posIndex}>
                         <h4>{position.title}</h4>
                         <p>{position.company}</p>
                         <a href="javascript:void(0);" onclick={`toggleDescription('desc-${yearIndex}-${posIndex}')`} class="read-more-link">
