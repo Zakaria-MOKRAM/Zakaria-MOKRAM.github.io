@@ -34,13 +34,21 @@ const projects = (await getCollection('work'))
 			<header class="hero">
 				<HeroIndex
 					title="Hello there, I am Zakaria MOKRAM"
-					tagline="Full Stack Software Engineer specializing in {Java, Angular, Thymeleaf, React, and DevOps} also experienced as an Oracle & SQL Server Database Administrator. "
+					tagline=""
 					align="start"
-				>
+					>
+					<p>
+					Full Stack Software Engineer specializing in 
+					<b style="color: var(--accent-regular); font-weight: 700;">
+					Java, Angular, Thymeleaf, React, and DevOps
+					</b> 
+					also experienced as an Oracle & SQL Server Database Administrator.
+					</p>
+	
 					<div class="roles">
-						<Pill><Icon icon="code" size="1.33em" /> Development </Pill>
-						<Pill><Icon icon="database-icon" size="1.33em" /> Database </Pill>
-						<Pill><Icon icon="docker-icon" size="1.33em" /> DevOps </Pill>
+					<Pill><Icon icon="code" size="1.33em" /> Development </Pill>
+					<Pill><Icon icon="database-icon" size="1.33em" /> Database </Pill>
+					<Pill><Icon icon="docker-icon" size="1.33em" /> DevOps </Pill>
 					</div>
 				</HeroIndex>
 
@@ -48,7 +56,7 @@ const projects = (await getCollection('work'))
 					alt="Zakaria Mokram"
 					width="480"
 					height="620"
-					src="/assets/PIC.jpeg"
+					src="/assets/ProPic.jpg"
 				/>
 			</header>
 
@@ -108,7 +116,6 @@ const projects = (await getCollection('work'))
 		align-items: center;
 		gap: 2rem;
 	}
-
 	.roles {
 		display: none;
 	}
