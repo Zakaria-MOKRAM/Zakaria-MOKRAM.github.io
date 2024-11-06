@@ -47,13 +47,30 @@ import Hero from '../components/Hero.astro';
 			<section>
 				<h2 class="section-title">Education</h2>
 				<div class="content">
-					<p>Corporis voluptates tenetur laudantium.</p>
+					<div class="education-item">
+						<span class="year-range">2021 - 2024</span>
+						<div>
+							<p><strong>Engineering Degree in Computer Science and Network</strong></p>
+               				<p>Rabat - Moroccan School of Engineering Sciences (EMSI)</p>
+						</div>
+					</div>
+					<div class="education-item">
+						<span class="year-range">2018 - 2020</span>
+						<div>
+							<p><strong>Advanced Technician Diploma in Computer Development Techniques</strong></p>
+                			<p>OFPPT - Specialized Institute of Applied Technology NTIC</p>
+						</div>
+					</div>
 				</div>
 			</section>
 			<section>
-				<h2 class="section-title">Skills</h2>
-				<div class="content">
-					<p>officia unde omnis</p>
+				<h2 class="section-title">Digital Skills</h2>
+				<div class="contentskl">
+					<p><strong>Front-End:</strong> ReactJS, Angular, Bootstrap, TailwindCSS</p>
+					<p><strong>Back-End:</strong> Node.js, PHP/Laravel, Java/Sping boot, C#/ASP.NET</p>
+					<p><strong>Databases:</strong><b style="color: var(--accent-regular); font-weight: 700;"> SQL</b> : MySQL, SQL Server, Oracle/<b style="color: var(--accent-regular); font-weight: 700;"> NoSQL </b>: Mongodb, MariaDB</p>
+					<p><strong>Design/Modeling:</strong> UML, MERISE</p>
+					<p><strong>Other Tools:</strong> Git, Docker, AWS, GitHub</p>
 				</div>
 			</section>
 		</main>
@@ -63,6 +80,32 @@ import Hero from '../components/Hero.astro';
 </BaseLayout>
 
 <style>
+	.education-item {
+        display: flex;
+		align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+		line-height: 1.5;
+    }
+
+    .year-range {
+        font-weight: bold;
+        background-color: #7611a6; /* Customize the background color as needed */
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        min-width: 80px;
+        text-align: center;
+    }
+
+    .content p {
+        margin: 0;
+    }
+
+	.contentskl p {
+        margin: 0.5rem 0;
+    }
+
 	.about {
 		display: flex;
 		flex-direction: column;
@@ -91,6 +134,8 @@ import Hero from '../components/Hero.astro';
 	.content {
 		grid-column: 2 / 4;
 		text-align: justify;
+		font-size: var(--text-lg);
+        color: var(--gray-200);
 	}
 
 	.content :global(a) {
