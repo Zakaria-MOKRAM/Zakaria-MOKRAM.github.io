@@ -45,7 +45,10 @@ const { Content } = await entry.render();
 			</header>
 			<main class="wrapper">
 				<div class="stack gap-10 content">
-					{entry.data.img && <img src={entry.data.img} alt={entry.data.img_alt || ''} />}
+					<div class="img-style">
+						{entry.data.img && <img src={entry.data.img} alt={entry.data.img_alt || ''} class="featured-image" />}
+
+					</div>
 					<div class="content">
 						<Content />
 					</div>
@@ -64,6 +67,21 @@ const { Content } = await entry.render();
 
 	.back-link {
 		display: none;
+	}
+
+	.img-style{
+		display: flex;
+		justify-content: center;
+
+	}
+	.featured-image {
+    	width: 300%; /* Élargir l'image à la largeur complète de son conteneur */
+		max-width: 800px;
+    	height: auto; /* Conserve les proportions de l’image */
+    	border-radius: 1.5rem;
+    	box-shadow: var(--shadow-sm);
+    	background: var(--gradient-subtle);
+    	border: 1px solid var(--gray-800);
 	}
 
 	.details {
@@ -148,4 +166,21 @@ const { Content } = await entry.render();
 			font-size: var(--text-2xl);
 		}
 	}
+
+	  /* Media query for smaller screens */
+	  @media (max-width: 768px) {
+    .img-style {
+      display: flex;
+      justify-content: center;
+    }
+
+    .featured-image {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border-radius: 1rem;
+      /* You may adjust the shadow, padding, or margins here if needed */
+    }
+  }
+	
 </style>

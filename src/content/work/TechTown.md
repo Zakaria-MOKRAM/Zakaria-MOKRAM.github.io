@@ -1,22 +1,40 @@
 ---
-title: h2.0
-publishDate: 2019-10-02 00:00:00
+title: TechTown (management of an electronics store)
+publishDate: 2024-11-02 00:00:00
 img: /assets/techTown.JPG
-img_alt: Soft pink and baby blue water ripples together in a subtle texture.
+img_alt: Product list
 description: |
-  We developed brand positioning and design assets for the launch
-  of a new colored water product.
 tags:
-  - Design
-  - Branding
+  - SpringBoot
+  - JWTAuthentication
+  - Angular
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur posuere commodo venenatis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam non ligula vel metus efficitur hendrerit. In hac habitasse platea dictumst. Praesent et mauris ut mi dapibus semper. Curabitur tortor justo, efficitur sit amet pretium cursus, porta eget odio. Cras ac venenatis dolor. Donec laoreet posuere malesuada. Curabitur nec mi tempor, placerat leo sit amet, tincidunt est. Quisque pellentesque venenatis magna, eget tristique nibh pulvinar in. Vestibulum vitae volutpat arcu. Aenean ut malesuada odio, sit amet pellentesque odio. Suspendisse nunc elit, blandit nec hendrerit non, aliquet at magna. Donec id leo ut nulla sagittis sodales.
+### Project Overview
+<div class="justified-text">
 
-Integer vitae nibh elit. Suspendisse eget urna eu neque bibendum pharetra. Sed interdum lectus sem, in pulvinar magna dignissim vel. Quisque maximus at urna nec laoreet. Suspendisse potenti. Vestibulum rhoncus sem ut mi pellentesque, in vestibulum erat blandit. Aliquam sodales dui ac maximus consectetur. Duis quis est vehicula, imperdiet nisl nec, fermentum erat. Duis tortor diam, pharetra eu euismod in, vehicula non eros. Curabitur facilisis dui at erat ultrices gravida. In at nunc ultricies, pulvinar mi vel, sagittis mauris. Praesent pharetra posuere purus ac imperdiet. Nulla facilisi.
+> The design of the EMS application was driven by a structured UML analysis approach</div>
+<div class="justified-text">
+<img src="/assets/Uml_diagram_class.png" alt="TechTown class diagram">
 
-Sed pulvinar porttitor mi in ultricies. Etiam non dolor gravida eros pulvinar pellentesque et dictum ex. Proin eu ornare ligula, sed condimentum dui. Vivamus tincidunt tellus mi, sed semper ipsum pharetra a. Suspendisse sollicitudin at sapien nec volutpat. Etiam justo urna, laoreet ac lacus sed, ultricies facilisis dolor. Integer posuere, metus vel viverra gravida, risus elit ornare magna, id feugiat erat risus ullamcorper libero. Proin vitae diam auctor, laoreet lorem vitae, varius tellus.
+ The **TechTown** web application is designed to meet the management needs of an electronics store. It allows the management of users, products, orders, and billing With a user-friendly interface, administrators can handle inventory and customer management, while users can place orders with ease.  
+</div>
 
-Mauris sed eros in ex maximus volutpat. Suspendisse potenti. Donec lacinia justo consectetur sagittis tempor. Proin ullamcorper nisi vitae auctor rhoncus. Sed tristique aliquam augue. Pellentesque vitae fringilla ligula. Nulla arcu elit, efficitur eu nunc malesuada, eleifend tincidunt orci. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer mattis orci in bibendum ultricies. Quisque a dui erat. Phasellus et vulputate ipsum. Proin metus ex, lobortis nec ornare eget, bibendum ut sapien. Aliquam in dolor lobortis, aliquam tellus a, congue augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+#### Key Features
+<div class="justified-text">
 
-Aenean pretium purus augue, ut bibendum erat convallis quis. Cras condimentum quis velit ac mollis. Suspendisse non purus fringilla, venenatis nisl porta, finibus odio. Curabitur aliquet metus faucibus libero interdum euismod. Morbi sed magna nisl. Morbi odio nibh, facilisis vel sapien eu, tempus tincidunt erat. Nullam erat velit, sagittis at purus quis, tristique scelerisque tortor. Pellentesque lacinia tortor id est aliquam viverra. Vestibulum et diam ac ipsum mollis fringilla.
+**User Management**: User authentication and authorization through Spring Security and JWT to ensure secure access.   
+**Product Management**: Adding, editing, and deleting products for real-time inventory tracking.   
+**Order and Billing**: Order tracking and automated invoice generation to streamline the sales process.  
+</div>
+
+#### Technologies Used
+<div class="justified-text">
+
+**Back-end**: Spring Boot with Spring Security and JWT to secure access to various features.  
+**Front-end**: Angular for a dynamic and responsive user interface.  
+**Database**: SQL for storing information on users, products, and transactions.  
+
+
+This project provides a complete and efficient solution for managing an electronics store, ensuring a secure and seamless user experience.
+</div>
