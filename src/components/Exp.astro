@@ -1,17 +1,36 @@
 ---
 const experiences = [
     {
-        year: '2023',
+        year: '2024',
         positions: [
             {
-                title: 'Backend Developer',
-                company: 'Acaart',
-                description: 'Developed and maintained library management web interfaces for better user engagement.'
+                title: 'Junior - Full Stack Developer',
+                company: 'AGIWISE - Rabat, Morocco',
+                description: [
+                    'Developed a CMMS (Computerized Maintenance Management System) application to efficiently manage equipment maintenance.',
+                    '→ Tools : Spring Boot, Spring Security, JWT | Thymeleaf | SQL | Docker Container'
+                ]
             },
             {
-                title: 'Web Developer',
-                company: 'AlFajr Library',
-                description: 'Developed and maintained library management web interfaces for better user engagement.'
+                title: 'Junior - Full Stack Intern Developer',
+                company: 'JWAYS Services - Agadir, Morocco',
+                description: [
+                    'Contributed to the development of a POS application for restaurants, streamlining order management, payments, and inventory.',
+                    '→ Tools : React | Spring Boot, Spring Security, JWT | SQL '
+                ]
+            }
+        ]
+    },
+    {
+        year: '2023',
+        positions: [
+        {
+                title: 'Junior - Full Stack Intern Developer',
+                company: 'DACHI COM - Agadir, Morocco',
+                description: [
+                    'The Employee Management System (EMS) automates HR tasks like data management, leave tracking, and performance monitoring, with a scalable architecture and flexible design for future enhancements.',
+                    '→ Tools : Spring Boot, Hibernate | Angular | SQL '
+                ]
             }
         ]
     },
@@ -19,19 +38,20 @@ const experiences = [
         year: '2022',
         positions: [
             {
-                title: 'Web Developer',
-                company: 'NYB CONSULTING SARL',
-                description: 'Developed and maintained library management web interfaces for better user engagement.'
-            }
-        ]
-    },
-    {
-        year: '2021',
-        positions: [
+                title: 'Junior - Full Stack Intern Developer',
+                company: 'INTICSOLUTIONS - Agadir, Morocco',
+                description: [
+                    'Developed a web application for managing a surf camp.',
+                    '→ Tools : React, JavaScript | Laravel Framework (PHP) | MySQL '
+                ]
+            },
             {
-                title: 'Web Developer',
-                company: 'EST',
-                description: 'Developed and maintained library management web interfaces for better user engagement.'
+                title: 'Web Application "Hermies"',
+                company: 'End-of-Year Project : EMSI - Honoris United Universities ',
+                description: [
+                    'Designed and developed a web application for the "Hermies" Hotel to manage reservations, clients, rooms, billing, etc.',
+                    '→ Tools : Django Framework (Python) | Bootstrap | MySQL '
+                ]
             }
         ]
     }
@@ -52,9 +72,13 @@ const experiences = [
                         <a href="javascript:void(0);" onclick={`toggleDescription('desc-${yearIndex}-${posIndex}')`} class="read-more-link">
                             Read More
                         </a>
-                        <p id={`desc-${yearIndex}-${posIndex}`} class="description" style="display: none;">
-                            {position.description}
-                        </p>
+                        <div id={`desc-${yearIndex}-${posIndex}`} class="description" style="display: none;">
+                            {
+                                Array.isArray(position.description)
+                                    ? position.description.map((line, idx) => <p key={idx}>{line}</p>)
+                                    : <p>{position.description}</p>
+                            }
+                        </div>
                     </div>
                 ))}
             </div>
@@ -101,6 +125,7 @@ const experiences = [
         grid-template-columns: repeat(auto-fit);
         gap: 1.5rem;
         padding: 1rem;
+        margin: auto;
     }
 
     .year-block {
@@ -158,6 +183,10 @@ const experiences = [
 
         .year {
             padding-top: 0;
+        }
+
+        .experience {
+        width: 70%;
         }
     }
 </style>

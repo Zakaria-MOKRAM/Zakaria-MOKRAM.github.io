@@ -32,8 +32,8 @@ tags:
 
 #### Technologies Used
 <div class="justified-text">
-<div style="margin-left: 60px;">
-<img src="/assets/auth.JPG" alt="Pos authentification"></div>
+<div style="display : flex">
+<img style=" width:100%; max-width : 400px ; margin : auto " src="/assets/auth.JPG" alt="Pos authentification"></div>
 <br>
 <br>
 

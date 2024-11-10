@@ -54,12 +54,15 @@ const projects = (await getCollection('work'))
 					</div>
 				</HeroIndex>
 
-				<img
-					alt="Zakaria Mokram"
-					width="480"
-					height="620"
-					src="/assets/ProPic.jpg"
-				/>
+
+				<div class="responsive-image">
+					<img
+						alt="Zakaria Mokram"
+						width="480"
+						height="620"
+						src="/assets/ProPic.jpg"
+					/>
+				</div>	
 			</header>
 
 			<Skills />
@@ -106,7 +109,6 @@ const projects = (await getCollection('work'))
 				</div>
 			</section>
 		</main>
-
 		<ContactCTA />
 	</div>
 </BaseLayout>
@@ -122,20 +124,25 @@ const projects = (await getCollection('work'))
 		display: none;
 	}
 
-	.hero img {
-		aspect-ratio: 5 / 4;
-		object-fit: cover;
-		object-position: top;
-		border-radius: 1.5rem;
-		box-shadow: var(--shadow-md);
+	.responsive-image {
+    width: 100%; /* Make the div take up the full width of its container */
+    max-width: 480px; /* Limit the width on larger screens */
+    height: auto; /* Let the height adjust automatically */
+    display: flex;
+    justify-content: center; /* Center the image inside */
 	}
 
-	@media (min-width: 50em) {
-		.hero {
-			display: grid;
-			grid-template-columns: 6fr 4fr;
-			padding-inline: 2.5rem;
-			gap: 3.75rem;
+	.responsive-image img {
+    width: 100%; /* Make the image take up the full width of the div */
+    height: auto; /* Maintain aspect ratio */
+	}
+
+@media (min-width: 50em) {
+	.hero {
+		display: grid;
+		grid-template-columns: 6fr 4fr;
+		padding-inline: 2.5rem;
+		gap: 3.75rem;
 		}
 
 		.roles {
@@ -226,7 +233,7 @@ const projects = (await getCollection('work'))
 		.gallery {
 			display: flex;
 			grid-area: gallery;
-			gap: 5rem;
+			gap: 7rem;
 		}
 
 		.cta {
@@ -250,7 +257,7 @@ const projects = (await getCollection('work'))
 	}
 
 	@media (min-width: 50em) {
-		.mention-card {
+		.	 {
 			border-radius: 1.5rem;
 			height: 9.5rem;
 		}
