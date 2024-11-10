@@ -13,7 +13,7 @@ tags:
 ### Project Overview
 <div class="justified-text">
 
-> The design of the EMS application was driven by a structured UML analysis approach</div>
+> The design of the TechTown application was driven by a structured UML analysis approach</div>
 <div class="justified-text">
 <img src="/assets/Uml_diagram_class.png" alt="TechTown class diagram">
 
