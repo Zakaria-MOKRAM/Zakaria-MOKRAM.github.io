@@ -47,4 +47,3 @@ Each sprint focused on delivering functional modules, such as equipment manageme
 **Jira Integration:** Jira API was employed for issue tracking, ensuring smooth collaboration and task management between team members.  
 **Docker** containerization enabled easier deployment and version control, while the use of Spring Boot and Thymeleaf ensured smooth, responsive, and scalable web development.
 </div>
-
