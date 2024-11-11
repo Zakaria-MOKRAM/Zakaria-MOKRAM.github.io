@@ -3,6 +3,7 @@ title: TechTown (management of an electronics store)
 publishDate: 2024-11-02 00:00:00
 img: /assets/techTown.JPG
 img_alt: Product list
+githubUrl: "https://github.com/Zakaria-MOKRAM/TechTown"
 description: |
 tags:
   - SpringBoot

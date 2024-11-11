@@ -3,7 +3,7 @@ title: GMAO (Gestion maintenance assister par Ordinateur)
 publishDate: 2020-03-02 00:00:00
 img: /assets/GMAOrdi.JPG
 img_alt: Gestion maintenance assister par Ordinateur
-
+githubUrl: "https://github.com/Zakaria-MOKRAM/GMAO"
 description: |
  
 tags:

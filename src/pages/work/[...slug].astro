@@ -38,7 +38,11 @@ const { Content } = await entry.render();
 							<div class="tags">
 								{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
 							</div>
-							<p class="description">{entry.data.description}</p>
+							{entry.data.githubUrl && (
+								<a href={entry.data.githubUrl} class="source-button" target="_blank" rel="noopener noreferrer">
+									Code Source
+								</a>
+							)}
 						</div>
 					</Hero>
 				</div>
@@ -63,6 +67,21 @@ const { Content } = await entry.render();
 	header {
 		padding-bottom: 2.5rem;
 		border-bottom: 1px solid var(--gray-800);
+	}
+
+	.source-button {
+		background-color: var(--accent-dark);
+		color: white;
+		padding: 0.5rem 1rem;
+		border-radius: 0.5rem;
+		text-decoration: none;
+		font-weight: bold;
+		text-align: center;
+		transition: background-color 0.3s ease;
+	}
+
+	.source-button:hover {
+		background-color: var(--accent-light);
 	}
 
 	.back-link {

@@ -3,6 +3,7 @@ title: EMS (Employee Management System)
 publishDate: 2019-12-01 00:00:00
 img: /assets/employee_page.jpeg
 img_alt: employee list page
+githubUrl: "https://github.com/Zakaria-MOKRAM/ems-backend"
 description: |
 tags:
   - Spring Boot
