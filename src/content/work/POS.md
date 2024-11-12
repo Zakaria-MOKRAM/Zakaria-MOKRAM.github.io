@@ -3,7 +3,7 @@ title: POS (Point of Sale)
 publishDate: 2024-10-04 00:00:00
 img: /assets/pos.JPG
 img_alt: pos interface
-githubUrl: "https://github.com/Zakaria-MOKRAM/GMAO"
+githubUrl: "https://github.com/Zakaria-MOKRAM/Pos-Point-of-Sale-"
 description: |
 tags:
   - React
