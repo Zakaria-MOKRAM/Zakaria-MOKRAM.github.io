@@ -39,9 +39,9 @@ const { Content } = await entry.render();
 								{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
 							</div>
 							{entry.data.githubUrl && (
-								<a href={entry.data.githubUrl} class="source-button" target="_blank" rel="noopener noreferrer">
-									Code Source
-								</a>
+								<Pill><a href={entry.data.githubUrl} class="source-button" target="_blank" rel="noopener noreferrer" >
+									Code Source<Icon icon="code" size="1.33em" />
+								</a></Pill>
 							)}
 						</div>
 					</Hero>
@@ -72,12 +72,15 @@ const { Content } = await entry.render();
 	.source-button {
 		background-color: var(--accent-dark);
 		color: white;
-		padding: 0.5rem 1rem;
-		border-radius: 0.5rem;
 		text-decoration: none;
 		font-weight: bold;
 		text-align: center;
-		transition: background-color 0.3s ease;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		> div{
+			font-size: 15px !important;
+		}
 	}
 
 	.source-button:hover {
