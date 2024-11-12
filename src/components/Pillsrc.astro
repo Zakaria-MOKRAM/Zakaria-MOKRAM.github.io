@@ -1,0 +1,21 @@
+<div class="pillsrc"><slot /></div>
+
+<style>
+	.pillsrc {
+		display: flex;
+		padding: 0.5rem 1rem;
+		gap: 0.5rem;
+		color: var(--accent-text-over);
+		border: 1px solid var(--accent-regular);
+		background-color: var(--accent-black);
+		border-radius: 999rem;
+		font-size: var(--text-md);
+		line-height: 1.35;
+		white-space: nowrap;
+	}
+	.pillsrc:hover {
+        cursor: pointer;
+        transform: translateY(-4px); /* Augmenter la valeur ici */
+        box-shadow: 0 4px 10px rgba(251, 3, 168, 0.596); /* Ombre plus forte */
+    }
+</style>

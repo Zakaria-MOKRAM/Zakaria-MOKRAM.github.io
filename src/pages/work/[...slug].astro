@@ -7,6 +7,7 @@ import ContactCTA from '../../components/ContactCTA.astro';
 import Hero from '../../components/Hero.astro';
 import Icon from '../../components/Icon.astro';
 import Pill from '../../components/Pill.astro';
+import Pillsrc from '../../components/Pillsrc.astro';
 
 interface Props {
 	entry: CollectionEntry<'work'>;
@@ -39,9 +40,9 @@ const { Content } = await entry.render();
 								{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
 							</div>
 							{entry.data.githubUrl && (
-								<Pill><a href={entry.data.githubUrl} class="source-button" target="_blank" rel="noopener noreferrer" >
+								<Pillsrc><a href={entry.data.githubUrl} class="source-button" target="_blank" rel="noopener noreferrer" >
 									Code Source<Icon icon="code" size="1.33em" />
-								</a></Pill>
+								</a></Pillsrc>
 							)}
 						</div>
 					</Hero>
@@ -70,8 +71,7 @@ const { Content } = await entry.render();
 	}
 
 	.source-button {
-		background-color: var(--accent-dark);
-		color: white;
+		color: rgb(252, 239, 239);
 		text-decoration: none;
 		font-weight: bold;
 		text-align: center;
@@ -83,9 +83,6 @@ const { Content } = await entry.render();
 		}
 	}
 
-	.source-button:hover {
-		background-color: var(--accent-light);
-	}
 
 	.back-link {
 		display: none;
